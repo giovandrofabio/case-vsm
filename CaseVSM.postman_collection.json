@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "eed1afe9-4df8-480f-821a-df2f9fc3cb32",
+		"name": "CaseVSM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12327586"
+	},
+	"item": [
+		{
+			"name": "Novo Access Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "@ngul@r0",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "angular",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client",
+							"value": "angular",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin@vsm.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cidades",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYyNDc0OTg2LCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9SRU1PVkVSX0NJREFERSIsIlJPTEVfQ0FEQVNUUkFSX1BFU1NPQSIsIlJPTEVfQVRVQUxJWkFSX0NJREFERSIsIlJPTEVfUEVTUVVJU0FSX0NJREFERSIsIlJPTEVfQVRVQUxJWkFSX1BFU1NPQSJdLCJqdGkiOiJtaWRkR1puVFp3aGp5aUdkOE9lUVdjMTdBQmMiLCJjbGllbnRfaWQiOiJhbmd1bGFyIn0.3fJaeDQjwwjbmcTbXGSlEaDsIXyH-VCE76OQnG9n2qk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/cidades/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cidades",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Cidades",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYyMzQxMzU5LCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX0NBREFTVFJBUl9QRVNTT0EiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0lEQURFIiwiUk9MRV9SRU1PVkVSX0NJREFERSJdLCJqdGkiOiJHLTc4RXZmaWNraURuRzAwYTVYcUVDRldtUVUiLCJjbGllbnRfaWQiOiJhbmd1bGFyIn0.GL4uKxK_pxQicsxP9tqLOyumucqAAWC-26lq3vBQa6s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/cidades/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cidades",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Pessoa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYyNDg2MDYyLCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9SRU1PVkVSX0NJREFERSIsIlJPTEVfQ0FEQVNUUkFSX1BFU1NPQSIsIlJPTEVfQVRVQUxJWkFSX0NJREFERSIsIlJPTEVfUEVTUVVJU0FSX0NJREFERSIsIlJPTEVfQVRVQUxJWkFSX1BFU1NPQSJdLCJqdGkiOiJWdlJuUWxvaTBSaGpiMjBENFRIcFNiTnJSX2ciLCJjbGllbnRfaWQiOiJhbmd1bGFyIn0.ED0b8VJhmRMDSv97Q3a5ma30o0UAcPRIGH2UAVKD6Wg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pessoas?cpfcnpj=95.980.547/0001-07",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas"
+					],
+					"query": [
+						{
+							"key": "cpfcnpj",
+							"value": "95.980.547/0001-07"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Pessoa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYxOTk3MTY1LCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX0NBREFTVFJBUl9QRVNTT0EiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0lEQURFIl0sImp0aSI6IktyQXA1Zk5nQ01DRDNLejNXckVabW9NV1NsdyIsImNsaWVudF9pZCI6ImFuZ3VsYXIifQ.cbe-qnZp1DTXAih4AzsG7KgfrwmMVKZi9N5TdBRCs08",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pessoas/36208735858",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas",
+						"36208735858"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nova Cidade",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYyMDQzNTM2LCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX0NBREFTVFJBUl9QRVNTT0EiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0lEQURFIl0sImp0aSI6ImlzdTRNaUc2cVBDYWlPYWk4cFl0d2ZxRkdXdyIsImNsaWVudF9pZCI6ImFuZ3VsYXIifQ.VI5ESQdokQYfIAjQ3xEIKLDJV-yeq2Dh8dhBYWUgAwY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uf\": \"\",\r\n    \"nome\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cidades",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cidades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nova Pessoa",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYyMDQ1MDkxLCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX0NBREFTVFJBUl9QRVNTT0EiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0lEQURFIl0sImp0aSI6IjhGNlZLYUF4TWkyTmJiREp0V24tS0FkaWFlayIsImNsaWVudF9pZCI6ImFuZ3VsYXIifQ.ZhRMLKEiLE0TKAGAnd3WdgAheYefJybRmbXeEtd11s4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Giovandro Fabio dos Santos\",\r\n    \"cpfcnpj\": \"36208735858\",\r\n    \"senha\": \"123\",\r\n    \"endereco\": {\r\n        \"logradouro\": \"Rua Candido de Oliveira Carvalho\",\r\n        \"numero\": \"531\",\r\n        \"complemento\": null,\r\n        \"bairro\": \"Ribeiro\",\r\n        \"cep\": \"19802-410\"\r\n    },\r\n    \"telefone\": \"(18)3323-1549\",\r\n    \"celular\": \"(18)99786-0733\",\r\n    \"email\": \"giovandrofabiosantos@hotmail.com\",\r\n    \"cidade\": {\r\n        \"codigo\": 1,\r\n        \"uf\": \"RO\",\r\n        \"nome\": \"Alta Floresta D'oeste\"\r\n    },\r\n    \"ativo\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pessoas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Pessoa",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYyMDQ3NTk2LCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX0NBREFTVFJBUl9QRVNTT0EiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0lEQURFIl0sImp0aSI6IlFDRk5GS2hWS2g0V3RaMC1Hem1tR2hTaU5USSIsImNsaWVudF9pZCI6ImFuZ3VsYXIifQ.ihdQbgFbyRwvRUOkadIJ-eBjfNXt5WZdfOuceBTjM1Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Impostos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pessoas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Cidade",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYyMDg4NDEzLCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX0NBREFTVFJBUl9QRVNTT0EiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0lEQURFIiwiUk9MRV9SRU1PVkVSX0NJREFERSJdLCJqdGkiOiI0cUV4OGpqMUZqVG5YcE03d3ZVTzhHWkxmdXciLCJjbGllbnRfaWQiOiJhbmd1bGFyIn0.k4TOdEPIc_IoyHyaBU9eJ91Ct9R8X7J8maP79gOTD7g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Impostos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cidades/5588",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cidades",
+						"5588"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Pessoa",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYyMDQ3NTk2LCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX0NBREFTVFJBUl9QRVNTT0EiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0lEQURFIl0sImp0aSI6IlFDRk5GS2hWS2g0V3RaMC1Hem1tR2hTaU5USSIsImNsaWVudF9pZCI6ImFuZ3VsYXIifQ.ihdQbgFbyRwvRUOkadIJ-eBjfNXt5WZdfOuceBTjM1Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Giovandro Fabio dos Santos\",\r\n    \"cpfcnpj\": \"36208735858\",\r\n    \"senha\": \"123\",\r\n    \"endereco\": {\r\n        \"logradouro\": \"Rua Candido de Oliveira Carvalho\",\r\n        \"numero\": \"531\",\r\n        \"complemento\": null,\r\n        \"bairro\": \"Ribeiro\",\r\n        \"cep\": \"19802-410\"\r\n    },\r\n    \"telefone\": \"(18)3323-1549\",\r\n    \"celular\": \"(18)99786-0733\",\r\n    \"email\": \"giovandrofabiosantos@hotmail.com\",\r\n    \"cidade\": {\r\n        \"codigo\": 1,\r\n        \"uf\": \"RO\",\r\n        \"nome\": \"Alta Floresta D'oeste\"\r\n    },\r\n    \"ativo\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pessoas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza  ativo Pessoa",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkB2c20uY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm5vbWUiOiJBZG1pbmlzdHJhZG9yIiwiZXhwIjoxNjYyMDc2MDk5LCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DSURBREUiLCJST0xFX0NBREFTVFJBUl9QRVNTT0EiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9QRVNRVUlTQVJfQ0lEQURFIl0sImp0aSI6InUxSEw1cjRmZ3AxTjU4TXppb1VxdTlqaWtGYyIsImNsaWVudF9pZCI6ImFuZ3VsYXIifQ.30sGjwxDWjQ4X22USWzq4NfUES_gCZPYq3LoVDHZ4pQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "true",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pessoas/1/ativo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoas",
+						"1",
+						"ativo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
