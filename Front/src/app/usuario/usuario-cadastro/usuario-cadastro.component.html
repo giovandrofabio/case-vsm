@@ -22,10 +22,10 @@
       </div>
       <div class="col-12 md:col-6 p-fluid">
         <label>*{{ tipo.value === 'PF' ? 'CPF' : 'CNPJ' }}</label>
-        <p-inputMask mask="99.999.999/9999-99" name="cpfcnpj" ng-hide="tipo.value=='PJ'" [hidden]="pessoaFisica" value="CNPJ"
+        <p-inputMask mask="99.999.999/9999-99" name="cpfcnpj" [hidden]="pessoaFisica" value="CNPJ"
         [(ngModel)]="pessoa.cpfcnpj" #cpfcnpj="ngModel" [required]="true"></p-inputMask>
 
-        <p-inputMask mask="999.999.999-99" name="cpfcnpj" ng-hide="tipo.value=='PF'" [hidden]="!pessoaFisica" value="CPF"
+        <p-inputMask mask="999.999.999-99" name="cpfcnpj" [hidden]="!pessoaFisica" value="CPF"
         [(ngModel)]="pessoa.cpfcnpj" #cpfcnpj="ngModel" [required]="true"></p-inputMask>
 
         <app-message [control]="cpfcnpj" error="required"
