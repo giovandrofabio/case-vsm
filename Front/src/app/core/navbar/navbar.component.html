@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <img src="../../../assets/logo-vsm-info.png" class="img"><a href="javascript:;" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu"><i class="pi pi-bars"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <ul class="navbar-menu" [hidden]="!exibindoMenu">
+    <li class="navbar-usuario">{{usuarioLogado}}</li>
+    <li class="navbar-menuitem " routerLinkActive="ativo" *ngIf="temPermissao('ROLE_PESQUISAR_CIDADE')"><a class="pi pi-sitemap" routerLink="/cidades" (click)="exibindoMenu = !exibindoMenu"> Cidades</a></li>
+    <li class="navbar-menuitem" routerLinkActive="ativo" *ngIf="temPermissao('ROLE_PESQUISAR_PESSOA')"><a class="pi pi-user" routerLink="/pessoas" (click)="exibindoMenu = !exibindoMenu"> Pessoas</a></li>
+    <li class="navbar-menuitem"><a href="javascript:;" class="pi pi-eject" (click)="logout()"> Logout</a></li>
+  </ul>
+</nav>

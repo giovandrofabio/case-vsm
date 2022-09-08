@@ -1,0 +1,117 @@
+<div class="container">
+  <form #pessoasForm="ngForm" autocomplete="off" (ngSubmit)="salvar(pessoasForm)">
+    <div class="grid">
+      <div class="col-12">
+        <h1>{{editando ? 'Editação de' : 'Novo'}} Usuário</h1>
+      </div>
+
+      <div class="col-12">
+        <p-selectButton [options]="tipos" #tipo name="tipo" [(ngModel)]="pessoa.tipo" (onChange)="VerificapessoaFisica()"></p-selectButton>
+      </div>
+
+      <div class="col-12 md:col-6 p-fluid">
+        <label>*Nome</label>
+        <input pInputText class="uppercase" type="text" name="nome"
+        [(ngModel)]="pessoa.nome" #nome="ngModel" required minlength="5">
+
+        <app-message [control]="nome" error="required"
+        text="Informe o nome"></app-message>
+
+        <app-message [control]="nome" error="minlength"
+          text="Campo precisa de mais de 5 Caracteres"></app-message>
+      </div>
+      <div class="col-12 md:col-6 p-fluid">
+        <label>*{{ tipo.value === 'PF' ? 'CPF' : 'CNPJ' }}</label>
+        <p-inputMask mask="99.999.999/9999-99" name="cpfcnpj" [hidden]="pessoaFisica" value="CNPJ"
+        [(ngModel)]="pessoa.cpfcnpj" #cpfcnpj="ngModel" [required]="true"></p-inputMask>
+
+        <p-inputMask mask="999.999.999-99" name="cpfcnpj" [hidden]="!pessoaFisica" value="CPF"
+        [(ngModel)]="pessoa.cpfcnpj" #cpfcnpj="ngModel" [required]="true"></p-inputMask>
+
+        <!--<app-message [control]="cpfcnpj" error="required"
+        text="Informe o {{ tipo.value === 'PF' ? 'CPF' : 'CNPJ' }}"></app-message>-->
+      </div>
+      <div class="col-12 md:col-9 p-fluid">
+        <label>Logradouro</label>
+        <input pInputText class="uppercase" type="text" name="logradouro"
+        [(ngModel)]="pessoa.endereco.logradouro" #logradouro="ngModel">
+      </div>
+      <div class="col-12 md:col-3 p-fluid">
+        <label>Número</label>
+        <p-inputNumber mode="decimal" name="numero"
+        inputId="withoutgrouping" [useGrouping]="false"
+        [(ngModel)]="pessoa.endereco.numero" #numero="ngModel">
+      </p-inputNumber>
+      </div>
+      <div class="col-12 md:col-4 p-fluid">
+        <label>Complemento</label>
+        <input pInputText class="uppercase" type="text" name="complemento"
+        [(ngModel)]="pessoa.endereco.complemento">
+      </div>
+      <div class="col-12 md:col-4 p-fluid">
+        <label>Bairro</label>
+        <input pInputText class="uppercase" type="text" name="bairro"
+        [(ngModel)]="pessoa.endereco.bairro" #bairro="ngModel">
+      </div>
+      <div class="col-12 md:col-4 p-fluid">
+        <label>CEP</label>
+        <p-inputMask mask="99999-999" name="cep"
+        [(ngModel)]="pessoa.endereco.cep" #cep="ngModel"
+        ngDefaultControl></p-inputMask>
+      </div>
+      <div class="col-12 md:col-6 p-fluid">
+        <label>Cidade</label>
+        <p-dropdown [options]="cidades" class="uppercase" placeholder="Selecione"
+          [filter]="true" [showClear]="true"[(ngModel)]="pessoa.cidade"
+          name="cidade" #cidade="ngModel"
+          (onFilter)="pesquisando($event)">
+        </p-dropdown>
+      </div>
+      <div class="col-12 md:col-6 p-fluid" >
+        <label>Estado</label>
+        <input pInputText *ngIf="!pessoa.cidade" value="Escolha Uma Cidade" disabled>
+        <input *ngIf="pessoa.cidade" pInputText class="uppercase" type="text" name="estado"
+        [(ngModel)]="pessoa.cidade.uf" #estado="ngModel" disabled>
+      </div>
+      <div class="col-12 md:col-6 p-fluid">
+        <label>Telefone</label>
+        <p-inputMask mask="(99) 9999-9999" name="telefone"
+        [(ngModel)]="pessoa.telefone" #telefone="ngModel"></p-inputMask>
+      </div>
+      <div class="col-12 md:col-6 p-fluid">
+        <label>Celular</label>
+        <p-inputMask mask="(99) 99999-9999" name="celular"
+        [(ngModel)]="pessoa.celular" #celular="ngModel"></p-inputMask>
+      </div>
+      <div class="col-12 md:col-12 p-fluid">
+        <label>Email</label>
+        <input pInputText type="email" name="email"
+        [(ngModel)]="pessoa.email" #email="ngModel">
+      </div>
+      <div class="col-12 md:col-6 p-fluid">
+        <label>*Senha</label>
+        <input pInputText type="password" name="senha"
+        [(ngModel)]="pessoa.senha" #senha="ngModel" required>
+
+        <app-message [control]="senha" error="required"
+        text="Informe a Senha!"></app-message>
+      </div>
+      <div class="col-12 md:col-6 p-fluid">
+        <label>Ativo</label><br>
+        <p-inputSwitch name="ativo"
+        [(ngModel)]="pessoa.ativo" #ativo="ngModel"></p-inputSwitch>
+      </div>
+      <div class="col-12">
+        <span class="salvar">
+          <button pButton type="submit" label="Salvar" [disabled]="pessoasForm.invalid"></button>
+        </span>
+        <span class="novo">
+          <button pButton type="button" label="Novo" class="p-button-info"
+          (click)="nova(pessoasForm)"></button>
+        </span>
+        <a routerLink="/pessoas">Voltar para a pesquisa</a>
+      </div>
+    </div>
+  </form>
+</div>
+

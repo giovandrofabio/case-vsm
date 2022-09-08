@@ -1,0 +1,84 @@
+<p-card [style]="{ 'width': '100%', 'height': '100vh', 'display': 'flex','justify-content': 'center','align-items' : 'center', 'background-image': 'url(https://card.homolog.vsm.com.br/background_card.e1adcde35a817641aa6c.jpg)','background-size' : 'cover', 'background-color': '#fff' }">
+  <p-card [style]="{'width': '35rem', 'margin-bottom': '2em'}" class="card flex align-items-center justify-content-center">
+    <div class="container" style="max-width: 400px; margin: auto">
+
+      <form autocomplete="off" #loginForm="ngForm">
+        <div class="p-grid">
+
+          <div class="p-col-12 p-fluid">
+            <h1>Login</h1>
+          </div>
+          <span>
+            Faça o login para acessar a aplicação
+          </span>
+          <p></p>
+          <div class="p-col-12 p-fluid email">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input pInputText type="email" name="usuario" placeholder="E-mail"
+                ngModel required #usuario>
+            </div>
+          </div>
+
+          <div class="p-col-12 p-fluid password">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+              <input pInputText type="password" name="senha" placeholder="Senha"
+                ngModel required #senha>
+            </div>
+          </div>
+
+          <div class="p-col-8 login" >
+            <button pButton type="submit" label="Login" [disabled]="loginForm.invalid"
+              (click)="login(usuario.value, senha.value); senha.value= ''"></button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </p-card>
+  <div class="footer">
+    <div style="display: flex;">
+      <div class="vsm-logo">
+        <div class="p-col-1">
+          <span>Tecnologia</span>
+        </div>
+        <div class="p-col-2">
+          <a href="http://www.vsm.com.br/" target="_blank" title="VSM Informática">
+            <img src="../../../assets/logo-vsm-info.png" height="30" alt="VSM Informática">
+          </a>
+        </div>
+      </div>
+      <div style="width: 100%;">
+        <div class="p-col-2">
+          <span>Conheça também</span>
+        </div>
+        <div class="p-col-2 imagem-app">
+          <a href="http://www.vsm.com.br/" target="_blank" title="VSM Informática">
+            <img src="../../../assets/bi.png" height="30" alt="VSM Informática">
+          </a>
+        </div>
+        <div class="p-col-2 imagem-app">
+          <a href="http://www.vsm.com.br/" target="_blank" title="VSM Informática">
+            <img src="../../../assets/logo-vsm-ecommerce.png" height="30" alt="VSM Informática">
+          </a>
+        </div>
+        <div class="p-col-2 imagem-app">
+          <a href="http://www.vsm.com.br/" target="_blank" title="VSM Informática">
+            <img src="../../../assets/cloud.png" height="30" alt="VSM Informática">
+          </a>
+        </div>
+        <div class="p-col-2 imagem-app">
+          <a href="http://www.vsm.com.br/" target="_blank" title="VSM Informática">
+            <img src="../../../assets/webconvenio.png" height="30" alt="VSM Informática">
+          </a>
+        </div>
+        <div class="p-col-2 imagem-app">
+          <a href="http://www.vsm.com.br/" target="_blank" title="VSM Informática">
+            <img src="../../../assets/formulas.png" height="30" alt="VSM Informática">
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+</p-card>

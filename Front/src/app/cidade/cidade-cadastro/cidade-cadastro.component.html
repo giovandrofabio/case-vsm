@@ -1,0 +1,43 @@
+<div class="container">
+  <form #cidadesForm="ngForm" autocomplete="off" (ngSubmit)="salvar(cidadesForm)">
+    <div class="grid">
+      <div class="col-12">
+        <h1>{{editando ? 'Editação de' : 'Nova'}} Cidade</h1>
+      </div>
+
+      <div class="col-12 p-fluid">
+        <label>Nome</label>
+        <input class="uppercase" pInputText type="text" name="nome"
+        [(ngModel)]="cidade.nome" #nome="ngModel" required minlength="5">
+
+        <app-message [control]="nome" error="required"
+        text="Informe o nome!"></app-message>
+
+        <app-message [control]="nome" error="minlength"
+          text="Campo precisa de mais de 5 Caracteres!"></app-message>
+      </div>
+      <div class="col-12 md:col-1 p-fluid">
+        <label>UF</label>
+        <input class="uppercase" pInputText type="text" name="uf"
+        [(ngModel)]="cidade.uf" #uf="ngModel" required maxlength="2">
+
+        <app-message [control]="uf" error="required"
+        text="Informe o Estado!"></app-message>
+
+        <app-message [control]="uf" error="minlength"
+        text="Informe somente 2 Caracteres!"></app-message>
+      </div>
+      <div class="col-12">
+        <span class="salvar">
+          <button pButton type="submit" label="Salvar" [disabled]="cidadesForm.invalid"></button>
+        </span>
+        <span class="novo">
+          <button pButton type="button" label="Novo" class="p-button-info"
+          (click)="nova(cidadesForm)"></button>
+        </span>
+        <a routerLink="/cidades">Voltar para a pesquisa</a>
+      </div>
+    </div>
+  </form>
+</div>
+

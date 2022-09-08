@@ -1,0 +1,42 @@
+.email {
+  margin-bottom: 15px;
+}
+.password {
+  margin-bottom: 15px;
+}
+
+.login{
+  margin-bottom: 10px;
+}
+
+.footer {
+  background-color: #f0f3f5;
+  margin-top: -40px;
+  align-items: end;
+  padding: 10px;
+  text-align: center;
+}
+
+.icone{
+  display: flex;
+}
+
+.vsm{
+  display: inline;
+}
+
+.imagem-app{
+  display: inline;
+  margin-left: 20px;
+}
+
+.rodape{
+  display: inline-flexbox;
+}
+
+.vsm-logo {
+  border-right: 1px solid;
+	padding-right: 20px;
+  margin-top: 10px;
+  width: 160px;
+}
