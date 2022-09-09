@@ -22,14 +22,18 @@
       </div>
       <div class="col-12 md:col-6 p-fluid">
         <label>*{{ tipo.value === 'PF' ? 'CPF' : 'CNPJ' }}</label>
-        <p-inputMask mask="99.999.999/9999-99" name="cpfcnpj" [hidden]="pessoaFisica" value="CNPJ"
-        [(ngModel)]="pessoa.cpfcnpj" #cpfcnpj="ngModel" [required]="true"></p-inputMask>
-
-        <p-inputMask mask="999.999.999-99" name="cpfcnpj" [hidden]="!pessoaFisica" value="CPF"
-        [(ngModel)]="pessoa.cpfcnpj" #cpfcnpj="ngModel" [required]="true"></p-inputMask>
-
-        <app-message [control]="cpfcnpj" error="required"
-        text="Informe o {{ tipo.value === 'PF' ? 'CPF' : 'CNPJ' }}"></app-message>
+        <div [hidden]="pessoaFisica">
+          <p-inputMask mask="99.999.999/9999-99" name="cnpj" value="CNPJ"
+          [(ngModel)]="pessoa.cpfcnpj" #cnpj="ngModel" [required]="true"></p-inputMask>
+          <app-message [control]="cnpj" error="required"
+          text="Informe o {{ tipo.value === 'PF' ? 'CPF' : 'CNPJ' }}"></app-message>
+        </div>
+        <div [hidden]="!pessoaFisica">
+          <p-inputMask mask="999.999.999-99" name="cpf" value="CPF"
+          [(ngModel)]="pessoa.cpfcnpj" #cpf="ngModel" [required]="true"></p-inputMask>
+          <app-message [control]="cpf" error="required"
+          text="Informe o {{ tipo.value === 'PF' ? 'CPF' : 'CNPJ' }}"></app-message>
+        </div>
       </div>
       <div class="col-12 md:col-9 p-fluid">
         <label>Logradouro</label>
